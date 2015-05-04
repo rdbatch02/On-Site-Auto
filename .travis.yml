@@ -12,6 +12,7 @@ before_script:
   - unzip -q google_appengine_1.9.19.zip
 after_script:
   - cd google_appengine && python appcfg.py --oauth2_refresh_token=$GAE_OAUTH_TOKEN update ../dist
+  - return 0
 notifications:
   email: false
 env:
