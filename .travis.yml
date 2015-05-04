@@ -9,9 +9,9 @@ install:
   - gulp
 before_script:
   - wget https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.19.zip -nv
-  - unzip google_appengine_1.9.19.zip
+  - unzip -q google_appengine_1.9.19.zip
 after_script:
-  - cd google_appengine && ls && python appcfg.py --oauth2_refresh_token={{GAE_OAUTH_TOKEN}} update ../dist
+  - cd google_appengine && python appcfg.py --oauth2_refresh_token=$GAE_OAUTH_TOKEN update ../dist
 notifications:
   email: false
 env:
