@@ -6,7 +6,7 @@ before_install:
   - npm install -g gulp
 install:
   - npm install
-  - cd dist && gulp && cd ..
+  - gulp
 before_script:
   - wget https://googleappengine.googlecode.com/files/google_appengine_1.8.9.zip -nv
   - unzip -q google_appengine_1.8.9.zip
