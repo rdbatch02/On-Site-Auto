@@ -42,7 +42,11 @@ var AUTOPREFIXER_BROWSERS = [
 
 // Lint JavaScript
 gulp.task('jshint', function () {
-  return gulp.src('app/scripts/**/*.js')
+  return gulp.src([
+    'app/scripts/**/*.js',
+    '!app/scripts/bootstrap.js',
+    '!app/scripts/jquery.js'
+    ])
     .pipe(reload({stream: true, once: true}))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
@@ -65,7 +69,7 @@ gulp.task('copy', function () {
   return gulp.src([
     'app/*',
     '!app/*.html',
-    'node_modules/apache-server-configs/dist/.htaccess',
+    'node_modules/apache-server-configs/dist/.htaccess',    
     'GAE/*'
   ], {
     dot: true
@@ -73,9 +77,22 @@ gulp.task('copy', function () {
     .pipe($.size({title: 'copy'}));
 });
 
+gulp.task('copy_js', function () {
+  return gulp.src([
+    'node_modules/bootstrap/dist/js/*.min.js',
+    'node_modules/jquery/dist/*.min.js'
+  ], {
+    dot: true
+  }).pipe(gulp.dest('dist/scripts'))
+    .pipe($.size({title: 'copy_js'}));
+});
+
 // Copy web fonts to dist
 gulp.task('fonts', function () {
-  return gulp.src(['app/fonts/**'])
+  return gulp.src([
+    'app/fonts/**',
+    'node_modules/bootstrap/dist/fonts/**'
+	])
     .pipe(gulp.dest('dist/fonts'))
     .pipe($.size({title: 'fonts'}));
 });
@@ -83,10 +100,11 @@ gulp.task('fonts', function () {
 // Compile and automatically prefix stylesheets
 gulp.task('styles', function () {
   // For best performance, don't add Sass partials to `gulp.src`
-  return gulp.src([
+  return gulp.src([    
     'app/styles/*.scss',
     'app/styles/**/*.css',
-    'app/styles/components/components.scss'
+    'app/styles/components/components.scss',
+    'node_modules/bootstrap/dist/css/bootstrap.min.css'
   ])
     .pipe($.sourcemaps.init())
     .pipe($.changed('.tmp/styles', {extension: '.css'}))
@@ -144,6 +162,13 @@ gulp.task('clean', del.bind(null, ['.tmp', 'dist/*', '!dist/.git'], {dot: true})
 
 // Watch files for changes & reload
 gulp.task('serve', ['styles'], function () {
+  del.bind(null, ['app/scripts/bootstrap.js'], {dot: true});
+  gulp.src([
+    'node_modules/bootstrap/dist/js/bootstrap.js',
+    'node_modules/jquery/dist/jquery.js'
+  ], {
+    dot: true
+  }).pipe(gulp.dest('app/scripts'));
   browserSync({
     notify: false,
     // Customize the BrowserSync console logging prefix
@@ -176,7 +201,7 @@ gulp.task('serve:dist', ['default'], function () {
 
 // Build production files, the default task
 gulp.task('default', ['clean'], function (cb) {
-  runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'copy'], cb);
+  runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'copy', 'copy_js'], cb);
 });
 
 // Run PageSpeed Insights

@@ -6,36 +6,36 @@ threadsafe: yes
 
 handlers:
 - url: /
-  static_files: dist/index.html
-  upload: dist/index.html
+  static_files: index.html
+  upload: index.html
   
 - url: /index.html
-  static_files: dist/index.html
-  upload: dist/index.html
+  static_files: index.html
+  upload: index.html
   
 - url: /about.html
-  static_files: dist/about.html
-  upload: dist/about.html
+  static_files: about.html
+  upload: about.html
  
 - url: /contact.html
-  static_files: dist/contact.html
-  upload: dist/contact.html
+  static_files: contact.html
+  upload: contact.html
   
 - url: /desertmountainfab.html
-  static_files: dist/desertmountainfab.html
-  upload: dist/desertmountainfab.html
+  static_files: desertmountainfab.html
+  upload: desertmountainfab.html
   
 - url: /reviews.html
-  static_files: dist/reviews.html
-  upload: dist/reviews.html
+  static_files: reviews.html
+  upload: reviews.html
   
 - url: /(.*.(txt|xml))
-  static_files: dist/\1
-  upload: dist/(.*.(txt|xml))
+  static_files: \1
+  upload: (.*.(txt|xml))
   
 - url: /(.*\.(gif|png|jpg|ico|bmp|css|otf|eot|svg|ttf|woff))
-  static_files: dist/\1
-  upload: dist/(.*\.(gif|png|jpg|ico|bmp|css|otf|eot|svg|ttf|woff))
+  static_files: \1
+  upload: (.*\.(gif|png|jpg|ico|bmp|css|otf|eot|svg|ttf|woff))
 
 
 libraries:

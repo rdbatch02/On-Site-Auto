@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Web Starter Kit</title>
+    <title>On Site Auto Repair</title>
 
     <!-- Add to homescreen -->
     <link rel="manifest" href="manifest.json">
@@ -27,19 +27,15 @@
 
     <meta name="theme-color" content="#3372DF">
 
-    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
-    <!--
-    <link rel="canonical" href="http://www.example.com/">
-    -->
-
     <!-- Page styles -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
   </head>
   <body>
     <header class="app-bar promote-layer">
       <div class="app-bar-container">
         <button class="menu"><img src="images/hamburger.svg" alt="Menu"></button>
-        <h1 class="logo">Web <strong>Starter Kit</strong></h1>
+        <h1 class="logo"><strong>On Site Auto Repair</strong></h1>
         <section class="app-bar-actions">
         <!-- Put App Bar Buttons Here -->
         <!-- e.g <button><i class="icon icon-star"></i></button> -->
@@ -50,22 +46,49 @@
     <nav class="navdrawer-container promote-layer">
       <h4>Navigation</h4>
       <ul>
-        <li><a href="#hello">Hello</a></li>
-        <li><a href="#get-started">Get Started</a></li>
-        <li><a href="styleguide.html">Style Guide</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>        
+        <li><a href="desertmountainfab.html">Desert Mountain Fabrication</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
       </ul>
     </nav>
 
     <main>
-      <h1 id="hello">Hello!</h1>
-      <p>Welcome to Web Starter Kit.</p>
-
-      <h2 id="get-started">Get Started.</h2>
-      <p>Read how to <a href="https://developers.google.com/web/starter-kit">Get Started</a> or check out the <a href="styleguide.html">Style Guide</a>.</p>
+      <h1></h1>
+      <div class="row">
+        <div class="col-md-6">
+          <p>On Site Auto repair will come to you for your car, truck or RV repair. No need to pay extra to have your car towed to a shop, On Site will perform the repair at your home or work, valleywide!</p>
+          <ul> 
+            <li>Computerized Diagnostics</li> 
+            <li>Brakes</li> 
+            <li>Transmissions</li> 
+            <li>&quot;No Starts&quot;</li> 
+            <li>Batteries</li> 
+            <li>Tune Ups</li> 
+            <li>Air Conditioning</li>
+            <li>And much more!</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <img class="img-responsive" src="images/truck.jpg" alt="On Site Truck" />  
+        </div>          
+      </div>
+      
+       <div class="row">
+         <div class="col-md-12">
+            <p>Next time you are in need of any quick car repair, call On Site!</p>
+          	<p class="main_text"><a href="tel:6029381944">Shop: 602-938-1944</a><br /><a href="tel:6023772428">Mobile: 602-377-2428</a><br />No Service Call Fee</p>
+         </div>               
+      </div>
     </main>
 
     <!-- build:js scripts/main.min.js -->
     <script src="scripts/main.js"></script>
+    <!-- buils:js scripts/jquery.min.js -->
+    <script src="scripts/jquery.js"></script>
+    <!-- build:js scripts/bootstrap.min.js -->
+    <script src="scripts/bootstrap.js"></script>        
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

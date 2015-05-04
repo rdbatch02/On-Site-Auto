@@ -1,3 +1,5 @@
 dist/*
 node_modules/*
 .tmp/*
+app/scripts/bootstrap.js
+app/scripts/jquery.js
