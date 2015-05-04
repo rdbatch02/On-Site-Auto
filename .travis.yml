@@ -1,0 +1,19 @@
+language: python
+python:
+  - '2.7'
+before_install:
+  - gem install compass
+  - npm install -g gulp
+install:
+  - npm install
+  - cd dist && gulp && cd ..
+before_script:
+  - wget https://googleappengine.googlecode.com/files/google_appengine_1.8.9.zip -nv
+  - unzip -q google_appengine_1.8.9.zip
+after_script:
+  - appcfg.py --oauth2_refresh_token={{GAE_OAUTH_TOKEN}} update /dist
+notifications:
+  email: false
+env:
+  global:
+    secure: NgqZEEbuL1sNOKF7xMIkzLG7MDlfiWIH2XcY6UtUtfXdeQ4K3ZFvvwVbwPVVqXL6FAKIoGl15uUzH5GX9lpoucScy5pQR0ItHiFzbrNlzFN437ycOoWF+mmtfI5EYOb5nZdlQHEwyrhxa6UhAGTJATOiC9dR8zzWqh589vI3b6E=

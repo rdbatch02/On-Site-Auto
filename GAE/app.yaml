@@ -1,0 +1,43 @@
+application: on-site-auto
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /
+  static_files: dist/index.html
+  upload: dist/index.html
+  
+- url: /index.html
+  static_files: dist/index.html
+  upload: dist/index.html
+  
+- url: /about.html
+  static_files: dist/about.html
+  upload: dist/about.html
+ 
+- url: /contact.html
+  static_files: dist/contact.html
+  upload: dist/contact.html
+  
+- url: /desertmountainfab.html
+  static_files: dist/desertmountainfab.html
+  upload: dist/desertmountainfab.html
+  
+- url: /reviews.html
+  static_files: dist/reviews.html
+  upload: dist/reviews.html
+  
+- url: /(.*.(txt|xml))
+  static_files: dist/\1
+  upload: dist/(.*.(txt|xml))
+  
+- url: /(.*\.(gif|png|jpg|ico|bmp|css|otf|eot|svg|ttf|woff))
+  static_files: dist/\1
+  upload: dist/(.*\.(gif|png|jpg|ico|bmp|css|otf|eot|svg|ttf|woff))
+
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
