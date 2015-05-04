@@ -2,6 +2,7 @@ language: python
 python:
   - '2.7'
 before_install:
+  - npm cache clean
   - gem install compass
   - npm install -g gulp
 install:
