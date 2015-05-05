@@ -3,12 +3,12 @@
 
 # TEAM
 
-  <name> -- <role> -- <twitter>
+  Ryan Batchelder -- Developer/Designer -- @c1phr
 
 # THANKS
 
-  <name>
+  Google Web Starter Kit
 
 # TECHNOLOGY COLOPHON
 
-  HTML5, CSS3
+  HTML5, CSS3, Gulp, NPM, Visual Studio Code
