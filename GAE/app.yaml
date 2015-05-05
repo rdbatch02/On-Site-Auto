@@ -25,9 +25,9 @@ handlers:
   static_files: desertmountainfab.html
   upload: desertmountainfab.html
   
-- url: /reviews.html
-  static_files: reviews.html
-  upload: reviews.html
+- url: /testimonials.html
+  static_files: testimonials.html
+  upload: testimonials.html
   
 - url: /(.*.(txt|xml))
   static_files: \1
