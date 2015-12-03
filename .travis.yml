@@ -3,6 +3,7 @@ python:
   - '2.7'
 before_install:
   - npm install -g npm@'>=3.3.12'
+  - nvm install 0.12 && nvm use 0.12
   - npm cache clean
   - gem install compass
   - npm install -g gulp
@@ -25,5 +26,4 @@ branches:
 env:  
   global:    
     - secure: NgqZEEbuL1sNOKF7xMIkzLG7MDlfiWIH2XcY6UtUtfXdeQ4K3ZFvvwVbwPVVqXL6FAKIoGl15uUzH5GX9lpoucScy5pQR0ItHiFzbrNlzFN437ycOoWF+mmtfI5EYOb5nZdlQHEwyrhxa6UhAGTJATOiC9dR8zzWqh589vI3b6E=
-    - TRAVIS_NODE_VERSION="0.12"
   
