@@ -2,7 +2,7 @@ language: python
 python:
   - '2.7'
 before_install:
-  - npm install -g npm@'>=2.1.1'
+  - npm install -g npm@'>=3.3.12'
   - npm cache clean
   - gem install compass
   - npm install -g gulp
@@ -10,8 +10,8 @@ install:
   - npm install
   - gulp
 before_script:
-  - wget https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.19.zip -nv
-  - unzip -q google_appengine_1.9.19.zip
+  - wget https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.22.zip -nv
+  - unzip -q google_appengine_1.9.22.zip
 script: 
   - return 0
 after_script:
