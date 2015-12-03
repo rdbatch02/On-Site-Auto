@@ -22,7 +22,8 @@ notifications:
 branches:
   only:
     - master
-env:
-  global:
-    secure: NgqZEEbuL1sNOKF7xMIkzLG7MDlfiWIH2XcY6UtUtfXdeQ4K3ZFvvwVbwPVVqXL6FAKIoGl15uUzH5GX9lpoucScy5pQR0ItHiFzbrNlzFN437ycOoWF+mmtfI5EYOb5nZdlQHEwyrhxa6UhAGTJATOiC9dR8zzWqh589vI3b6E=
-  - TRAVIS_NODE_VERSION="0.12"
+env:  
+  global:    
+    - secure: NgqZEEbuL1sNOKF7xMIkzLG7MDlfiWIH2XcY6UtUtfXdeQ4K3ZFvvwVbwPVVqXL6FAKIoGl15uUzH5GX9lpoucScy5pQR0ItHiFzbrNlzFN437ycOoWF+mmtfI5EYOb5nZdlQHEwyrhxa6UhAGTJATOiC9dR8zzWqh589vI3b6E=
+    - TRAVIS_NODE_VERSION="0.12"
+  
