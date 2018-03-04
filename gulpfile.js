@@ -128,24 +128,7 @@ gulp.task('html', function () {
   return gulp.src('app/**/*.html')
     .pipe(assets)
     // Concatenate and minify JavaScript
-    .pipe($.if('*.js', $.uglify({preserveComments: 'some'})))
-    // Remove any unused CSS
-    // Note: if not using the Style Guide, you can delete it from
-    //       the next line to only include styles your project uses.
-    .pipe($.if('*.css', $.uncss({
-      html: [
-        'app/index.html',
-        'app/styleguide.html'
-      ],
-      // CSS Selectors for UnCSS to ignore
-      ignore: [
-        /.navdrawer-container.open/,
-        /.app-bar.open/
-      ]
-    })))
-    // Concatenate and minify styles
-    // In case you are still using useref build blocks
-    .pipe($.if('*.css', $.csso()))
+    .pipe($.if('*.js', $.uglify({preserveComments: 'some'})))    
     .pipe(assets.restore())
     .pipe($.useref())
     // Update production Style Guide paths
